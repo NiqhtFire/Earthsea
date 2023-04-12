@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     
@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     public float speed = 40f;
     public float jumpSpeed = 5f;
 
-    public string[] interactionTypes =new string[] {"Ogion", "Ship"};
+    public string[] interactionTypes =new string[] {"Ogion", "Ship", "library", "book", "Jasper"};
     //public ParticleSystem dustparticle;
      
     SpriteRenderer srenderer; 
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
             verticalMove = true;
         }
         if (Input.GetKey(KeyCode.S)){
-            crouch = true;
+           // crouch = true;
         }
     
         if(horizontalMove == -40) {
@@ -64,8 +64,24 @@ public class Movement : MonoBehaviour
                 interaction.interactHandler(true, obj.gameObject.tag);
             }
         }
+
+        if(obj.tag == "Shadow"|| obj.tag == "Spike" ){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+          
+        }
+
+        if(obj.tag == "Door"){
+           
+        interaction.eUI.SetActive(true);
+
+            if(Input.GetKeyDown(KeyCode.E)){
+                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+
+        }
+       
     }
-    
+} 
   
 
     void OnTriggerExit2D(Collider2D obj)

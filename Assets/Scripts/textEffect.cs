@@ -7,9 +7,10 @@ public class textEffect : MonoBehaviour
 {
     public TextMeshProUGUI texta;
     public Color colora;
-
+    public float decrease = 0.02f;
     void Start()
     {
+
         colora = texta.color;
         colora.a = 1f; 
         texta.color = colora; 
@@ -19,7 +20,7 @@ public class textEffect : MonoBehaviour
     IEnumerator FadeOut()
     {
         while (colora.a > 0) {
-            colora.a -= 0.02f;
+            colora.a -= decrease;
             texta.color = colora;
             yield return new WaitForSeconds(0.02f);
         }

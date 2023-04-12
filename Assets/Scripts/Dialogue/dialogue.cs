@@ -17,9 +17,14 @@ public class dialogue : MonoBehaviour
     public bool changetime;
     public GameObject rojdtext;
     public Movement move;
-
+    public Scene scene;
     public questText qtext;
-   
+
+    public GameObject magic;
+    public GameObject buyu;
+    void Awake(){
+        scene = SceneManager.GetActiveScene();
+    }
     void Start()
     {
         StartCoroutine(Type());
@@ -28,6 +33,8 @@ public class dialogue : MonoBehaviour
 
 
     private void Update() {
+        Debug.Log(scene.name);
+       
         if(textdisplay.text == sentences[index]){
             continueButton.SetActive(true);
         }
@@ -77,11 +84,25 @@ public class dialogue : MonoBehaviour
         } else {
             textdisplay.text = "";
             continueButton.SetActive(false);
+            if(scene.name == "Opening"){
+                Debug.Log("kek");
+                SceneManager.LoadScene("SampleScene");
+            }
             Time.timeScale = 1;
+            rojdtext.SetActive(false);
+            if(scene.name == "Roke"){
+                buyu.SetActive(true);  
+                magic.SetActive(true);
+            }
+            
+            
             move.interactionTypes = move.interactionTypes.Where(s => s != "Ogion").ToArray();
-         //  qtext.quests = qtext.quests.Where(s => s != "Ogionla Konuş").ToArray();
+            //qtext.quests = qtext.quests.Where(s => s != "Ogionla Konuş").ToArray();
             qtext.updateQuests(true);
-            rojdtext.SetActive(false);  
+     
+            
+            Debug.Log("asd");
+           
             this.gameObject.SetActive(false);
 
          

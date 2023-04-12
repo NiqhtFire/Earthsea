@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Ogion
   - Ship
+  - library
+  - book
+  - Vetch
+  - Jasper
+  - Shadow
+  - Spike
+  - Door
   layers:
   - Default
   - TransparentFX

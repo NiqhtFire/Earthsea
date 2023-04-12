@@ -6,9 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: 228fa242a217d40ecb22859088895744
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Roke.unity
     guid: 0a2ac109de9164bc188ca3ae4865d3dc
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 6fc158f5d84c748898dba15c3b4350d8
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 9a7f95c91f7b64985855fd2048e024f5
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: e62f975b39a594824b6ebd8076d8e98a
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 659e3b790acc2445280bce34ab2f4573
+  - enabled: 1
+    path: Assets/Scenes/Ogion.unity
+    guid: 0cb0c28c68ca34372b2987c14416c880
   m_configObjects: {}

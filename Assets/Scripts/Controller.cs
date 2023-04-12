@@ -31,7 +31,7 @@ public class Controller : MonoBehaviour
     bool wallJumping; 
 	[Header("Events")]
 	[Space]
-
+	public Animator anim;
 	public UnityEvent OnLandEvent;
 
 	[System.Serializable]
@@ -145,6 +145,12 @@ public class Controller : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+			if(haxis == 20 || haxis == -20) {
+
+				anim.SetBool("run", true);
+			}else{
+				anim.SetBool("run", false);
+			}
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
 			{
